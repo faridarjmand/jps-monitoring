@@ -8,7 +8,7 @@
 
 #### Default Variable
 
-```
+``` ansible
   - chmod : 0755
   - owner : zabbix
   - srcsh : /root/PID/PID.sh
@@ -26,12 +26,12 @@ This guide will step you through the import of the PID.xml monitoring template.
 
 * Open the Zabbix console
 
-* Navigate to Configuration > Templates
+* Navigate to `Configuration` > `Templates`
 
-* Click the Import button
+* Click the `Import` button
 
-* Select the downloaded template_postgresql_server.xml file
+* Select the downloaded `PID.xml` file
 
-* Tick the Create new / Screens checkbox
+* Tick the `Create new / Screens` checkbox
 
-* Click Import
+* Click `Import`
