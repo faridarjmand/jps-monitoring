@@ -2,7 +2,7 @@
 
 ## Created By.Farid Arjmand ##
 
-### update in server
+### Update in Server
 
 ``` ansible-playbook PID.yaml --extra-vars "chmod=0755 owner=zabbix" -K ```
 
@@ -14,4 +14,5 @@
   - srcsh : /root/PID/PID.sh
   - srcconf : /root/PID/PID.conf
   - destsh : /etc/zabbix/scripts/
-  - destconf : /etc/zabbix/zabbix_agent.conf.d/ ```
+  - destconf : /etc/zabbix/zabbix_agent.conf.d/
+```
