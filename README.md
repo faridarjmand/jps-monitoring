@@ -1,5 +1,7 @@
 # Monitor JAVA Process with JPS
 
+Automatic Monitor JAVA Process and Add Alarm In Zabbix
+
 ## Created By.Farid Arjmand ##
 
 ### Update in Server
@@ -29,3 +31,19 @@ This guide will step you through the import of the PID.xml monitoring template.
 5. Select the downloaded `PID.xml` file
 6. Tick the `Create new / Screens` checkbox
 7. Click `Import`
+
+### Zabbix User Parameter
+run multi parameter and switch with zabbix
+
+``` UserParameter=PID[*],$HOME/zabbix_agent/scripts/PID.sh $1 ```
+
+### PID.sh Script
+```
+- json                    # Show New Json Process as json for zabbix
+- reload                  # cache jps -ml for Fast Runing and Better Performance
+- uniq                    # Find Uniq Verb in Process for Monitoring
+- all                     # Show Number of All Process
+- app                     # Show Number of appuser Process
+```
+
+or use Process Name In First parameter for Show PID
