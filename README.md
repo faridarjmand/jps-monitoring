@@ -4,4 +4,4 @@
 
 ### update in server
 
-``` ansible ```
+``` ansible-playbook PID.yaml -K ```
