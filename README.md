@@ -1,4 +1,4 @@
-# jps-monitoring
+# Monitor JAVA Process with JPS
 
 ## Created By.Farid Arjmand ##
 
