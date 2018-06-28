@@ -37,7 +37,7 @@ PID ()
 	elif [ $pid == 0 ];then
 		echo 0
 	else
-		grep -w "$1" $PIDTMP | awk '{print $1}'
+		grep -w "$1$" $PIDTMP | awk '{print $1}'
 	fi
 }
 JSON ()
