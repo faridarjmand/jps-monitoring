@@ -1,0 +1,39 @@
+- name: update PID.sh
+  hosts: all
+  gather_facts: true
+  become: true
+  become_method: sudo
+  become_user: zabbix
+  tasks:
+  - debug:
+      var: ansible_os_family
+  - name: copy PID.sh to Solaris server
+    copy:
+      src: /home/f.arjmand/PID/PID.sh
+      dest: /export/home/zabbix/zabbix_agent/scripts/
+      mode: 0755
+      owner: zabbix
+      when: ansible_os_family == "Solaris"
+  - name: copy PID.conf to Solaris server
+    copy:
+      src: /home/f.arjmand/PID/PID.conf
+      dest: /export/home/zabbix/zabbix_agent/conf/zabbix_agentd.conf.d/
+      mode: 0755
+      owner: zabbix
+      when: ansible_os_family == "Solaris"
+  - name: copy PID.sh to Debian or RedHat server
+    copy:
+      src: /home/f.arjmand/PID/PID.sh
+      dest: /home/zabbix/zabbix_agent/scripts/
+      mode: 0755
+      owner: zabbix
+      when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+  - name: copy PID.conf to Debian or RedHat server
+    copy:
+      src: /home/f.arjmand/PID/PID.conf
+      dest: /home/zabbix/zabbix_agent/conf/zabbix_agentd.conf.d/
+      mode: 0755
+      owner: zabbix
+      when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+  - name: restart zabbix-agent
+    shell: /etc/init.d/zabbix-agent restart
